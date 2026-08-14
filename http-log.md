@@ -239,9 +239,9 @@ alt-svc: h3=":443"; ma=86400
 
 # Response
 
-- Status: 200 OK
-- Content-Type: application/json; charset=utf-8
-- Response: JSON object containing user information.
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+Response: JSON object containing user information.
 
 # Observation
 
@@ -294,9 +294,9 @@ alt-svc: h3=":443"; ma=86400
 
 # Response
 
-- Status: 200 OK
-- Content-Type: application/json; charset=utf-8
-- Response: JSON object containing comment information.
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+Response: JSON object containing comment information.
 
 # Observation
 
@@ -341,8 +341,8 @@ alt-svc: h3=":443"; ma=86400
 
 # Response
 
-- Status: 404 Not Found
-- Content-Type: application/json; charset=utf-8
+Status: 404 Not Found
+Content-Type: application/json; charset=utf-8
 
 # Observation
 
@@ -351,8 +351,8 @@ The request was deliberately sent to a non-existent endpoint. The server returne
 
 # Status Code Meaning
 
-- 200 OK — The request was successfully processed.
-- 404 Not Found — The requested resource could not be found.
+200 OK — The request was successfully processed.
+404 Not Found — The requested resource could not be found.
 
 # Content-Type Meaning
 
