@@ -9,20 +9,32 @@ curl -i https://jsonplaceholder.typicode.com/posts/1
 # Full Response
 
 C:\Users\Anshumala>curl -i https://jsonplaceholder.typicode.com/posts/1
+
 HTTP/1.1 200 OK
+
 Date: Fri, 14 Aug 2026 13:30:39 GMT
+
 Content-Type: application/json; charset=utf-8
+
 Content-Length: 292
+
 Connection: keep-alive
+
 access-control-allow-credentials: true
+
 Cache-Control: max-age=43200
+
 etag: W/"124-yiKdLzqO5gfBrJFrcdJ8Yq0LGnU"
+
 expires: -1
+
 nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
 pragma: no-cache
 report-to: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=vm67FVLNHsCgrFgubRa04ooDeMKdgwXS9H3i2IbjuoY%3D\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\u0026ts=1785194657"}],"max_age":3600}
 reporting-endpoints: heroku-nel="https://nel.heroku.com/reports?s=vm67FVLNHsCgrFgubRa04ooDeMKdgwXS9H3i2IbjuoY%3D&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&ts=1785194657"
+
 Server: cloudflare
+
 vary: Origin, Accept-Encoding
 via: 2.0 heroku-router
 x-content-type-options: nosniff
@@ -42,6 +54,7 @@ alt-svc: h3=":443"; ma=86400
   "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
   "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
 }
+
 # Response
 
 Status: 200 OK
@@ -116,6 +129,7 @@ curl -i https://jsonplaceholder.typicode.com/users/1
 # Full Response
 C:\Users\Anshumala>curl -i https://jsonplaceholder.typicode.com/users/1
 HTTP/1.1 200 OK
+
 Date: Fri, 14 Aug 2026 13:35:12 GMT
 Content-Type: application/json; charset=utf-8
 Content-Length: 509
