@@ -29,8 +29,11 @@ etag: W/"124-yiKdLzqO5gfBrJFrcdJ8Yq0LGnU"
 expires: -1
 
 nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
+
 pragma: no-cache
+
 report-to: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=vm67FVLNHsCgrFgubRa04ooDeMKdgwXS9H3i2IbjuoY%3D\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\u0026ts=1785194657"}],"max_age":3600}
+
 reporting-endpoints: heroku-nel="https://nel.heroku.com/reports?s=vm67FVLNHsCgrFgubRa04ooDeMKdgwXS9H3i2IbjuoY%3D&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&ts=1785194657"
 
 Server: cloudflare
@@ -103,6 +106,7 @@ nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"succes
 pragma: no-cache
 
 report-to: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=AyDEJzv2CFP160WD%2F3JdlYGmQ%2BrTTe1sKm7ePc248Ko%3D\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\u0026ts=1786352212"}],"max_age":3600}
+
 reporting-endpoints: heroku-nel="https://nel.heroku.com/reports?s=AyDEJzv2CFP160WD%2F3JdlYGmQ%2BrTTe1sKm7ePc248Ko%3D&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&ts=1786352212"
 
 Server: cloudflare
@@ -187,6 +191,7 @@ pragma: no-cache
 
 report-to: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?
 s=vFqOaN78YYvn6a2s7ua%2FV7pltJEaqH%2Foz67ApraiMaU%3D\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\u0026ts=1786552366"}],"max_age":3600}
+
 reporting-endpoints: heroku-nel="https://nel.heroku.com/reports?s=vFqOaN78YYvn6a2s7ua%2FV7pltJEaqH%2Foz67ApraiMaU%3D&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&ts=1786552366"
 
 Server: cloudflare
@@ -287,6 +292,7 @@ expires: -1
 
 nel: {"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}
 pragma: no-cache
+
 report-to: {"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=QPAnKfzcZr%2B7jt4zABk8fHJbUmVPE%2Bq0YRdhLldcR%2Fw%3D\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\u0026ts=1786328764"}],"max_age":3600}
 
 reporting-endpoints: heroku-nel="https://nel.heroku.com/reports?s=QPAnKfzcZr%2B7jt4zABk8fHJbUmVPE%2Bq0YRdhLldcR%2Fw%3D&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&ts=1786328764"
