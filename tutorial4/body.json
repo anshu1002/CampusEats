@@ -1,0 +1,9 @@
+{
+  "customer_id": "C500",
+  "items": [
+    {
+      "item_id": "I001",
+      "quantity": 1
+    }
+  ]
+}
