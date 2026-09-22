@@ -1,0 +1,12 @@
+﻿{
+  "userId": 1,
+  "restaurantId": 10,
+  "paymentMethod": "UPI",
+  "items": [
+    {
+      "menuItemId": 101,
+      "quantity": 2,
+      "price": 50
+    }
+  ]
+}
