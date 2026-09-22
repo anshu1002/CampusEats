@@ -1,0 +1,12 @@
+{
+  "userId": 1,
+  "restaurantId": 10,
+  "items": [
+    {
+      "menuItemId": 5,
+      "quantity": 2,
+      "price": 100
+    }
+  ],
+  "paymentMethod": "card"
+}
