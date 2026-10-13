@@ -10,9 +10,8 @@ from payment_client import charge_payment
 
 app = Flask(__name__)
 
-# -----------------------------
 # Common helpers / headers
-# -----------------------------
+
 
 RATE_LIMIT = 60
 rate_limit_data = {}
@@ -137,9 +136,7 @@ def add_common_headers(response):
 store = OrderStore()
 
 
-# -----------------------------
 # Validation
-# -----------------------------
 
 def validate_create_order(data):
     if not isinstance(data, dict):
