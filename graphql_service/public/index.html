@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusEats | GraphQL Menu</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: Arial, sans-serif; color: #1f2937;
+      background: linear-gradient(135deg, #fff7ed, #fef2f2); min-height: 100vh;
+    }
+    header { background: #b91c1c; color: white; padding: 24px 7%; }
+    header h1 { margin: 0 0 7px; } header p { margin: 0; }
+    main { max-width: 950px; margin: 28px auto; padding: 0 18px; }
+    .panel {
+      background: white; padding: 22px; margin-bottom: 20px;
+      border-radius: 14px; box-shadow: 0 5px 18px #7f1d1d14;
+    }
+    h2 { margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+    .dish { border: 1px solid #fed7aa; border-radius: 10px; padding: 15px; }
+    .dish h3 { margin: 0 0 8px; }
+    .price { color: #b91c1c; font-weight: bold; font-size: 18px; }
+    .status { font-size: 13px; margin-top: 8px; }
+    form { display: flex; flex-wrap: wrap; gap: 10px; }
+    input { padding: 11px; border: 1px solid #d1d5db; border-radius: 8px; flex: 1; min-width: 150px; }
+    button {
+      border: 0; background: #b91c1c; color: white; padding: 11px 17px;
+      border-radius: 8px; cursor: pointer; font-weight: bold;
+    }
+    button:hover { background: #991b1b; }
+    #message { margin-top: 12px; }
+    .muted { color: #6b7280; font-size: 13px; }
+    code { background: #f3f4f6; padding: 2px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🍽️ CampusEats</h1>
+    <p>GraphQL Menu Service — CS543 Assignment 7</p>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>Available dishes</h2>
+      <p class="muted">This list is loaded with a GraphQL query from MySQL.</p>
+      <div id="dishes" class="grid">Loading dishes...</div>
+      <p id="loadMessage" class="muted"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Add a dish</h2>
+      <form id="addForm">
+        <input id="name" type="text" placeholder="Dish name (e.g. Paneer Roll)" required>
+        <input id="price" type="number" min="1" step="0.01" placeholder="Price (e.g. 90)" required>
+        <button type="submit">Add dish</button>
+      </form>
+      <p id="message" role="status"></p>
+    </section>
+
+    <section class="panel">
+      <h2>GraphQL used</h2>
+      <p><strong>Query:</strong> <code>query { dishes { id name price available } }</code></p>
+      <p><strong>Mutation:</strong> <code>addDish(input: { name, price })</code></p>
+      <p class="muted">Endpoint: <code>POST /graphql</code></p>
+    </section>
+  </main>
+
+  <script>
+    async function graphqlRequest(query, variables = {}) {
+      const response = await fetch("/graphql", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query, variables })
+      });
+      const result = await response.json();
+      if (result.errors) throw new Error(result.errors.map(e => e.message).join(", "));
+      return result.data;
+    }
+
+    async function loadDishes() {
+      const container = document.getElementById("dishes");
+      const loadMessage = document.getElementById("loadMessage");
+      try {
+        const data = await graphqlRequest(
+          "query { dishes { id name price available } }"
+        );
+        container.replaceChildren();
+        if (data.dishes.length === 0) {
+          container.textContent = "No dishes found. Add one below.";
+          return;
+        }
+        
+        data.dishes.forEach(dish => {
+          const card = document.createElement("article");
+          card.className = "dish";
+          const title = document.createElement("h3");
+          title.textContent = dish.name;
+          const price = document.createElement("p");
+          price.className = "price";
+          price.textContent = "₹" + Number(dish.price).toFixed(2);
+          const status = document.createElement("p");
+          status.className = "status";
+          status.textContent = dish.available ? "● Available" : "● Not available";
+          card.append(title, price, status);
+          container.appendChild(card);
+        });
+        loadMessage.textContent = "Loaded " + data.dishes.length + " dish(es).";
+      } catch (error) {
+        container.textContent = "Could not load dishes.";
+        loadMessage.textContent = error.message + " Check MySQL credentials and run schema.sql.";
+      }
+    }
+
+    document.getElementById("addForm").addEventListener("submit", async event => {
+      event.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const price = Number(document.getElementById("price").value);
+      const message = document.getElementById("message");
+      if (!name || !Number.isFinite(price) || price <= 0) {
+        message.textContent = "Enter a dish name and a price greater than zero.";
+        return;
+      }
+      try {
+        const data = await graphqlRequest(
+          "mutation AddDish($input: AddDishInput!) { addDish(input: $input) { id name price } }",
+          { input: { name, price } }
+        );
+        message.textContent = "Added " + data.addDish.name + " successfully!";
+        event.target.reset();
+        await loadDishes();
+      } catch (error) {
+        message.textContent = "Error: " + error.message;
+      }
+    });
+
+    loadDishes();
+  </script>
+</body>
+</html>
