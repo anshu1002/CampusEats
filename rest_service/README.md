@@ -35,7 +35,7 @@ The application uses an in-memory array to store food records and a simple HTML,
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/anshu1002/CampusEats.git
+   git clone https://github.com/anshu1002/CampusEats/tree/master/rest_service
    ```
    Demonstration Video:- https://drive.google.com/file/d/1jPbuTqeB8FfikdbowGII3nfCW2jPxNW2/view?usp=sharing
 
