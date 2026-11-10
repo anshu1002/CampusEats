@@ -3,4 +3,6 @@ graphql_service/node_modules/
 
 # REST service dependencies
 rest_service/node_modules/
-.env
+
+# Environment variables
+rest_service/.env
