@@ -226,8 +226,7 @@ Explanation: The restaurant user is authenticated and authorized to create a new
 
 ## Demonstration Video
 
-[CampusEats REST API Demonstration](https://drive.google.com/file/d/1jPbuTqeB8FfikdbowGII3nfCW2jPxNW2/view?usp=sharing)
-
+[CampusEats REST API Demonstration](https://drive.google.com/drive/folders/19j5WashCQcEdBlHISirz5KPVFzY4oh3w?usp=sharing)
 ## Team Members
 
 | Name | Roll Number |
